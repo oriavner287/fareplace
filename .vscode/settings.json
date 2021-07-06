@@ -1,0 +1,30 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSaveTimeout": 10000,
+    "terminal.integrated.shell.osx": "/bin/bash",
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.fontSize": 14,
+    "editor.fontSize": 16,
+    "workbench.activityBar.visible": true,
+    "editor.wordWrap": "on",
+    "explorer.compactFolders": false,
+    "editor.fontLigatures": false,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.syntaxProfiles": {
+        "html": {
+            "self_closing_tag": true
+        },
+        "jsx": {
+            "self_closing_tags": true
+        }
+    },
+    "editor.cursorStyle": "line",
+    "window.title": "${activeFolderMedium}${separator}${rootPath}",
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "window.zoomLevel": 0.4
+}

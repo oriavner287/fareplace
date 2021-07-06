@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: local('Montserrat-Regular'), url('@fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat-ExtraBold';
+    src: local('Montserrat-ExtraBold'), url('@fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Montserrat-Regular', sans-serif;
+    color: #2a2a2a;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Montserrat-ExtraBold', sans-serif;
+    font-size: 3rem;
+    color: #2a2a2a;
+}
