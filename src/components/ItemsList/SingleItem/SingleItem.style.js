@@ -20,7 +20,9 @@ export const Box = styled.div`
             transition: all 0.2s ease-out;
 
             &:hover {
-                margin-top: -4em;
+                @media (min-width: 1400px) {
+                    margin-top: -4em;
+                }
             }
         }
     }
@@ -30,7 +32,9 @@ export const Box = styled.div`
     }
 
     &:hover {
-        box-shadow: 0 0 1em 0 #ccc;
+        @media (min-width: 1400px) {
+            box-shadow: 0 0 1em 0 #ccc;
+        }
     }
 
     @media (min-width: 1200px) {
