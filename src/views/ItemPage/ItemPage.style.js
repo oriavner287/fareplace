@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
         margin: 4em auto;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1400px) {
         margin: 6em auto;
     }
 `
