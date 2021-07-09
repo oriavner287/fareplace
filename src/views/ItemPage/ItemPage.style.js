@@ -30,6 +30,7 @@ export const Content = styled.div`
     padding: 3em 3em 2em;
     border-radius: 20px;
     margin-top: -3em;
+    max-width: 350px;
 `
 
 export const TitleWrapper = styled.div`
@@ -54,6 +55,7 @@ export const Deatils = styled.div`
     align-items: center;
     justify-content: space-between;
     margin-top: 1em;
+    flex-wrap: wrap;
 
     & p {
         margin-bottom: 0.9em;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import useDealsStore from '@src/store/deals'
+import rowTitleConfig from './config'
 import {
     Wrapper,
     Content,
@@ -19,18 +20,24 @@ function ItemPage() {
 
     const filtered = deals.filter(item => item.id === id)[0]
 
-    const {
-        imageUrl,
-        inboundId,
-        outboundId,
-        isLive,
-        numberOfBidders,
-        endDate,
-        viewersCount,
-        currency,
-        startingPrice,
-        currencySymbol
-    } = filtered || ''
+    const { imageUrl, inboundId, outboundId, isLive, startingPrice, currencySymbol } =
+        filtered || ''
+
+    const detailsContent = Object.entries(filtered).map(([key, value]) => {
+        if (
+            key === 'numberOfBidders' ||
+            key === 'viewersCount' ||
+            key === 'currency' ||
+            key === 'endDate'
+        ) {
+            return (
+                <p>
+                    <small>{rowTitleConfig[key]}:</small>{' '}
+                    {key !== 'endDate' ? value : new Date(value).toLocaleDateString('en-US')}
+                </p>
+            )
+        }
+    })
 
     return (
         <Wrapper>
@@ -43,24 +50,7 @@ function ItemPage() {
                     <Title>{`${inboundId} - ${outboundId}`}</Title>
                     {isLive && <IsLiveIndicator />}
                 </TitleWrapper>
-                <Deatils>
-                    <div>
-                        <p>
-                            <small>Bidders:</small> {numberOfBidders}
-                        </p>
-                        <p>
-                            <small>Viewed:</small> {viewersCount}
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            <small>Currency:</small> {currency}
-                        </p>
-                        <p>
-                            <small>Ending:</small> {new Date(endDate).toLocaleDateString('en-US')}
-                        </p>
-                    </div>
-                </Deatils>
+                <Deatils>{detailsContent}</Deatils>
                 <Price>
                     <p>Price:</p>
                     <h4>{`${currencySymbol}${startingPrice}`}</h4>
