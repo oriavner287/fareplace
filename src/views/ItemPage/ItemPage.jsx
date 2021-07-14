@@ -18,12 +18,9 @@ function ItemPage() {
 
     const deals = useDealsStore(({ deals }) => deals)
 
-    const filtered = deals.filter(item => item.id === id)[0]
+    const item = deals.find(item => item.id === id)
 
-    const { imageUrl, inboundId, outboundId, isLive, startingPrice, currencySymbol } =
-        filtered || ''
-
-    const detailsContent = Object.entries(filtered).map(([key, value]) => {
+    const detailsContent = Object.entries(item).map(([key, value]) => {
         if (
             key === 'numberOfBidders' ||
             key === 'viewersCount' ||
@@ -31,13 +28,15 @@ function ItemPage() {
             key === 'endDate'
         ) {
             return (
-                <p>
+                <p key={key}>
                     <small>{rowTitleConfig[key]}:</small>{' '}
                     {key !== 'endDate' ? value : new Date(value).toLocaleDateString('en-US')}
                 </p>
             )
         }
     })
+
+    const { imageUrl, inboundId, outboundId, isLive, startingPrice, currencySymbol } = item || ''
 
     return (
         <Wrapper>
