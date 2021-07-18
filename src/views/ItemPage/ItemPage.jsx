@@ -31,7 +31,7 @@ function ItemPage() {
         }
     })
 
-    const { imageUrl, inboundId, outboundId, isLive, startingPrice, currencySymbol } = item || ''
+    const { imageUrl, inboundId, outboundId, isLive, startingPrice, currencySymbol } = item
 
     return (
         <Wrapper>
