@@ -21,16 +21,11 @@ function ItemPage() {
     const item = deals.find(item => item.id === id)
 
     const detailsContent = Object.entries(item).map(([key, value]) => {
-        if (
-            key === 'numberOfBidders' ||
-            key === 'viewersCount' ||
-            key === 'currency' ||
-            key === 'endDate'
-        ) {
+        if (key in rowTitleConfig) {
             return (
                 <p key={key}>
                     <small>{rowTitleConfig[key]}:</small>{' '}
-                    {key !== 'endDate' ? value : new Date(value).toLocaleDateString('en-US')}
+                    {key === 'endDate' ? new Date(value).toLocaleDateString('en-US') : value}
                 </p>
             )
         }
