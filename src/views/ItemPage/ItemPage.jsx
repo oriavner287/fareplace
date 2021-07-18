@@ -20,16 +20,19 @@ function ItemPage() {
 
     const item = deals.find(item => item.id === id)
 
-    const detailsContent = Object.entries(item).map(([key, value]) => {
-        if (key in rowTitleConfig) {
-            return (
-                <p key={key}>
-                    <small>{rowTitleConfig[key]}:</small>{' '}
-                    {key === 'endDate' ? new Date(value).toLocaleDateString('en-US') : value}
-                </p>
-            )
-        }
-    })
+    const detailsContent = React.Children.toArray(
+        Object.entries(item).map(([key, value]) => {
+            if (key in rowTitleConfig) {
+                return (
+                    // eslint-disable-next-line react/jsx-key
+                    <p>
+                        <small>{rowTitleConfig[key]}:</small>{' '}
+                        {key === 'endDate' ? new Date(value).toLocaleDateString('en-US') : value}
+                    </p>
+                )
+            }
+        })
+    )
 
     const { imageUrl, inboundId, outboundId, isLive, startingPrice, currencySymbol } = item
 
