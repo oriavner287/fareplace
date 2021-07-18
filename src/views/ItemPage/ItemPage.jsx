@@ -20,8 +20,18 @@ function ItemPage() {
 
     const item = deals.find(item => item.id === id)
 
+    const {
+        imageUrl,
+        inboundId,
+        outboundId,
+        isLive,
+        startingPrice,
+        currencySymbol,
+        ...extraItems
+    } = item
+
     const detailsContent = React.Children.toArray(
-        Object.entries(item).map(([key, value]) => {
+        Object.entries(extraItems).map(([key, value]) => {
             if (key in rowTitleConfig) {
                 return (
                     // eslint-disable-next-line react/jsx-key
@@ -33,8 +43,6 @@ function ItemPage() {
             }
         })
     )
-
-    const { imageUrl, inboundId, outboundId, isLive, startingPrice, currencySymbol } = item
 
     return (
         <Wrapper>

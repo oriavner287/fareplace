@@ -4,20 +4,21 @@ import PropTypes from 'prop-types'
 import { Box, Title, PriceWrapper } from './SingleItem.style'
 
 function SingleItem({ item }) {
-    const { imageUrl, inboundId, outboundId, viewersCount, currencySymbol, currentMinPrice } = item
+    const { id, imageUrl, inboundId, outboundId, viewersCount, currencySymbol, currentMinPrice } =
+        item
 
     return (
         <Box>
-            <Link to={`/item/${item.id}`}>
+            <Link to={`/item/${id}`}>
                 <img src={imageUrl} alt="" />
             </Link>
             <Title>{`${inboundId} - ${outboundId}`}</Title>
             <p>{viewersCount} viewing this</p>
-            <PriceWrapper>
-                <Link to={`/item/${item.id}`}>
+            <Link to={`/item/${id}`}>
+                <PriceWrapper>
                     <p>{`Now from ${currencySymbol}${currentMinPrice}`}</p>
-                </Link>
-            </PriceWrapper>
+                </PriceWrapper>
+            </Link>
         </Box>
     )
 }

@@ -9,7 +9,14 @@ export const Box = styled.div`
     box-shadow: 0;
     transition: box-shadow 0.2s ease-out;
 
+    & > p {
+        margin: 0.8em 0;
+    }
+
     & > a {
+        text-decoration: none;
+        color: #2a2a2a;
+
         & > img {
             max-width: 100%;
             margin-top: -3em;
@@ -25,10 +32,6 @@ export const Box = styled.div`
                 }
             }
         }
-    }
-
-    & > * + * {
-        margin-top: 1em;
     }
 
     &:hover {
@@ -58,11 +61,6 @@ export const PriceWrapper = styled.div`
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.2s ease-out;
-
-    & > a {
-        text-decoration: none;
-        color: #2a2a2a;
-    }
 
     &:hover {
         background-color: #bccfdf;
