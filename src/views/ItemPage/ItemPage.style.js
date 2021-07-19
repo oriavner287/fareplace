@@ -39,6 +39,7 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.h3`
     margin-top: 1em;
+    text-align: center;
 `
 
 export const IsLiveIndicator = styled.div`
